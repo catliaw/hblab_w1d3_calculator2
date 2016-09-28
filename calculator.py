@@ -15,50 +15,50 @@ def calculator_interface():
 	Maximum of 2 integer arguments taken by functions."""
 
 	while True:
-		user_input = raw_input("")
-		tokens = user_input.split(" ")
-
-		if tokens[0] == "q":
-			break 
-		elif tokens[0] == "+":
-			num1 = int(tokens[1])
-			num2 = int(tokens[2])
-			total = add(num1, num2)
-			print total
-		elif tokens[0] == "-":
-			num1 = int(tokens[1])
-			num2 = int(tokens[2])
-			total = subtract(num1, num2)
-			print total
-		elif tokens[0] == "*":
-			num1 = int(tokens[1])
-			num2 = int(tokens[2])
-			total = multiply(num1, num2)
-			print total
-		elif tokens[0] == "/":
-			num1 = int(tokens[1])
-			num2 = int(tokens[2])
-			total = divide(num1, num2)
-			print total
-		elif tokens[0] == "square":
-			num1 = int(tokens[1])
-			total = square(num1)
-			print total
-		elif tokens[0] == "cube":
-			num1 = int(tokens[1])
-			total = cube(num1)
-			print total
-		elif tokens[0] == "pow":
-			num1 = int(tokens[1])
-			num2 = int(tokens[2])
-			total = power(num1, num2)
-			print total
-		elif tokens[0] == "mod":
-			num1 = int(tokens[1])
-			num2 = int(tokens[2])
-			total = mod(num1, num2)
-			print total
-		else:
-			print "I do not understand that command. Please try again!"
+		try:
+			user_input = raw_input("")
+			tokens = user_input.split(" ")
+			if tokens[0] == "q":
+				break 
+			if len(tokens) >= 3 and (tokens[0] == "square" or tokens[0] == "cube"):
+				print "Too many integers entered. Please try again."
+			elif len(tokens) > 3:
+				print "Too many integers entered. Please try again."
+			elif len(tokens) == 3:
+				num1 = int(tokens[1])
+				num2 = int(tokens[2])
+				if tokens[0] == "+":
+					total = add(num1, num2)
+					print total
+				elif tokens[0] == "-":
+					total = subtract(num1, num2)
+					print total
+				elif tokens[0] == "*":
+					total = multiply(num1, num2)
+					print total
+				elif tokens[0] == "/":
+					if num2 == "0"
+						print "Dividing by 0 results in undefined error. Please try again."
+					else:
+						total = divide(num1, num2)
+					print total
+				elif tokens[0] == "pow":
+					total = power(num1, num2)
+					print total
+				elif tokens[0] == "mod":
+					total = mod(num1, num2)
+					print total
+			elif len(tokens) == 2:
+				num1 = int(tokens[1])
+				if tokens[0] == "square":
+					total = square(num1)
+					print total
+				elif tokens[0] == "cube":
+					total = cube(num1)
+					print total
+			else:
+				print "[ELSE] I do not understand that command. Please try again!"
+		except IndexError:
+			print "[EXCEPT] I do not understand that command. Please try again!"
 
 calculator_interface()
