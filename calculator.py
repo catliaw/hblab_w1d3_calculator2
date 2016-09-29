@@ -24,6 +24,8 @@ def calculator_interface():
 				print "Too many integers entered. Please try again."
 			elif len(tokens) > 3:
 				print "Too many integers entered. Please try again."
+			elif len(tokens) < 3 and (tokens[0] == "+" or tokens[0] == "-" or tokens[0] == "*" or tokens[0] == "/" or tokens[0] == "pow" or tokens[0] == "mod"):
+				print "Too few integers entered, please try again."  
 			elif len(tokens) == 3:
 				num1 = int(tokens[1])
 				num2 = int(tokens[2])
@@ -37,11 +39,11 @@ def calculator_interface():
 					total = multiply(num1, num2)
 					print total
 				elif tokens[0] == "/":
-					if num2 == "0"
+					if num2 == 0:
 						print "Dividing by 0 results in undefined error. Please try again."
 					else:
 						total = divide(num1, num2)
-					print total
+						print total
 				elif tokens[0] == "pow":
 					total = power(num1, num2)
 					print total
