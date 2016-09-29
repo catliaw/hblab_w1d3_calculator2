@@ -23,25 +23,16 @@ def multiply(int_num_list):
         else:
             total = total * num
     return total
-listy = ["*", 10, 5, 4, 3, 1]
-multiply(listy)
 
 def divide(int_num_list):
-    """Takes 2 integers, divides the first input by the second, returning a floating point number."""
-    for ind, item in enumerate(int_num_list):
-        if ind != 0:
-            num_list[ind] = float(item)
-            int_num_list = num_list[1:]
-            total = None
-            for num in int_num_list:
-                if total == None:
-                    total = num
-                else:
-                    total = total / num
-            print total
-            return total
-listy = ["/", 10, 5, 4, 3, 1]
-divide(listy)
+    """Takes integers, divides the first input by the second, returning a floating point number."""
+    total = None
+    for num in int_num_list:
+        if total == None:
+            total = num
+        else:
+            total = total / num
+    return total
 
 def square(num1):
     """Takes 1 integer and returns the square of that integer."""
@@ -63,10 +54,7 @@ def power(int_num_list):
                     total = num
                 else:
                     total = total ** num
-            print total
             return total
-listy = ["pow", 5, 4, 3, 1]
-power(listy)
 
 def mod(int_num_list):
     """Takes 2 integers and returns the remainder when the first input is divided by the second input."""
